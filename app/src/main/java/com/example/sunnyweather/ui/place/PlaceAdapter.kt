@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sunnyweather.R
 import com.example.sunnyweather.logic.model.Place
 
-class PlaceAdapter(val fragment: Fragment, private val placeList: List<Place>) : RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
+class PlaceAdapter( private val placeList: List<Place>) : RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
     inner class ViewHolder(private val view : View) : RecyclerView.ViewHolder(view) {
         val placeName : TextView = view.findViewById(R.id.placeName)
         val placeAddress : TextView = view.findViewById(R.id.placeAddress)
