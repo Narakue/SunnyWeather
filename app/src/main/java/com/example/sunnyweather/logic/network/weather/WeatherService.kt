@@ -1,8 +1,8 @@
-package com.example.sunnyweather.logic.network
+package com.example.sunnyweather.logic.network.weather
 
 import com.example.sunnyweather.SunnyWeatherApplication
-import com.example.sunnyweather.logic.model.DailyResponse
-import com.example.sunnyweather.logic.model.RealtimeResponse
+import com.example.sunnyweather.logic.model.weather.DailyResponse
+import com.example.sunnyweather.logic.model.weather.RealtimeResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

@@ -1,7 +1,9 @@
 package com.example.sunnyweather.logic
 
 import androidx.lifecycle.liveData
-import com.example.sunnyweather.logic.model.Weather
+import com.example.sunnyweather.logic.dao.PlaceDao
+import com.example.sunnyweather.logic.model.place.Place
+import com.example.sunnyweather.logic.model.weather.Weather
 import com.example.sunnyweather.logic.network.SunnyWeatherNetwork
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -10,6 +12,12 @@ import kotlin.coroutines.CoroutineContext
 
 @Suppress("SameParameterValue")
 object Repository {
+    fun savePlace(place: Place) = PlaceDao.savePlace(place)
+
+    fun getSavedPlace() = PlaceDao.getSavedPlace()
+
+    fun isPlaceSaved() = PlaceDao.isPlaceSaved()
+
     fun searchPlaces(query: String) = fire(Dispatchers.IO) { // 在子线程中进行网络请求
         val placeResponse = SunnyWeatherNetwork.searchPlaces(query)
         if (placeResponse.status == "ok") {
@@ -45,7 +53,7 @@ object Repository {
             val result = try {
                 block()
             } catch (e: Exception) {
-                Result.failure<T>(e)
+                Result.failure(e)
             }
             emit(result)
         }

@@ -1,4 +1,4 @@
-package com.example.sunnyweather.logic.model
+package com.example.sunnyweather.logic.model.weather
 
 import com.google.gson.annotations.SerializedName
 import java.util.*

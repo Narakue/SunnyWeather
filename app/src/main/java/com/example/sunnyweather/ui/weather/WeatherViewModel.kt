@@ -1,10 +1,10 @@
-package com.example.sunnyweather.ui.place
+package com.example.sunnyweather.ui.weather
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.example.sunnyweather.logic.Repository
-import com.example.sunnyweather.logic.model.Location
+import com.example.sunnyweather.logic.model.place.Location
 
 class WeatherViewModel : ViewModel() {
     private val locationLiveData = MutableLiveData<Location>()
@@ -16,7 +16,7 @@ class WeatherViewModel : ViewModel() {
         Repository.refersWeather(location.lng, location.lat)
     }
 
-    fun refersWeather(lng: String, lat: String) {
+    fun refreshWeather(lng: String, lat: String) {
         locationLiveData.value = Location(lng, lat)
     }
 }

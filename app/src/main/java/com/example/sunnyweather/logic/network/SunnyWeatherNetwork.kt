@@ -1,5 +1,7 @@
 package com.example.sunnyweather.logic.network
 
+import com.example.sunnyweather.logic.network.place.PlaceService
+import com.example.sunnyweather.logic.network.weather.WeatherService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
