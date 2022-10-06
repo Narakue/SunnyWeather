@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sunnyweather.MainActivity
 import com.example.sunnyweather.R
 import com.example.sunnyweather.SunnyWeatherApplication
 import com.example.sunnyweather.ui.weather.WeatherActivity
@@ -61,7 +62,7 @@ class PlaceFragment : Fragment() {
             override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
                 if (event.targetState == Lifecycle.State.CREATED) {
                     //在这里任你飞翔
-                    if (viewModel.isPlaceSaved()) {
+                    if (activity is MainActivity && viewModel.isPlaceSaved()) {
                         val place = viewModel.getSavedPlace()
                         val intent = Intent(context, WeatherActivity::class.java).apply {
                             putExtra("location_lng", place.location.lng)
