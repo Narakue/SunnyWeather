@@ -60,6 +60,7 @@ class PlaceFragment : Fragment() {
                     //在这里任你飞翔
                     val layoutManager = LinearLayoutManager(activity)
                     recyclerView.layoutManager = layoutManager
+                    // TODO fragment recyclerview 分发问题
                     recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                         override fun onScrollStateChanged(
                             recyclerView: RecyclerView,
